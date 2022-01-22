@@ -2,17 +2,17 @@
 lista = list()
 conjunto = set()
 #definición de la funcipón con parámetro de recepción listaOrdenada y regresa listaOrdenada
-def ingresa(listaOrdenada):
-    #Ordena la lista
-    listaOrdenada.sort()
+def ingresa(listaAOrdenar):
     #imprime la lista total
-    print("Lista Ordenada : ",listaOrdenada)
+    print("Lista Ordenada : ",listaAOrdenar)
     #asigna la listaOrdenada al conjunto, para eliminar los duplicados
-    conjunto = set(listaOrdenada)
+    conjunto = set(listaAOrdenar)
     #imprime el conjunto
     print("conjunto : ", conjunto)
     #reasinga a listaOrdenada el conjunto para tener la lista ordenada y sin duplicados
     listaOrdenada = list(conjunto)
+    #Ordena la lista
+    listaOrdenada.sort()
     #For para imprimir uno a uno todos los elementos de la lista
     for o in listaOrdenada:
         print(o)
