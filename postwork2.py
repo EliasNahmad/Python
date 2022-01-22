@@ -39,6 +39,15 @@ def genera_reporte(d01):
   print("Deuda con intereses : ${}".format(d01["NuevaDeuda"]))
   return(d01["NuevaDeuda"])  
 
+def iteracion(d01):
+  consecutivo = 0
+  for i in d01["Nombre"]:
+    print("Nombre : {}".format(d01["Nombre"][consecutivo]))
+    print("Tasa : {}".format(d01["Tasa"][consecutivo]))
+    print("Deuda : {}".format(d01["Deuda"][consecutivo]))
+    print("Nuevos Cargos : {}".format(d01["NuevosCargos"][consecutivo]))
+    consecutivo +=1
+
 def crea_tarjeta():
     Nomb_Tarj = input("Nombre de la tarjeta : ")
     Tasa = input("Cuál es la tasa de interés contratada : ")
@@ -81,36 +90,19 @@ def liquida_deuda(d01):
 
 print ("Bienvenido al Banco del malestar")
 print ("Para nostros es un placer atenderlo")
-#print("llamada a la funcion, crea_tarjeta")
+diccionario_datos={
+  "Nombre":["elias","moises","javier","marcela"],
+  "Tasa":["10","11","12","13"],
+  "Deuda":["1000","2000","3000","4000"],
+  "NuevosCargos":["100","200","300","400"],
+  "MontoPago":["0","0","0","0"],
+  "ProximoPago":["0","0","0","0"]}
+
+#para probar las funciones hay que descomentar la que se requiera
+
 #funcion1 = crea_tarjeta()
-#print("llamada a la función, captura_nueva_deuda")
 #captura_nueva_deuda(diccionario_datos)
 #genera_reporte(diccionario_datos)
-liquida_deuda(diccionario_datos)
+#iteracion(diccionario_datos)
+#liquida_deuda(diccionario_datos)#pago recurrente
 
-'''
-
-def realizar_pago():
-  Desea_Pago = input ("Desea Realizar su pago S/N : ")
-  if Desea_Pago=="n" or Desea_Pago=="N" :
-    print ("Gracias por preferir el Banco del Malestar, vuelva pronto")
-  else:
-    Pago = input ("Favor de ingresar el monto que desea pagar : ")
-    if float(Pago) > float(Prox_Pago):
-      print ("Su pago no puede ser mayor a la deuda total {}".format (Prox_Pago))
-      d3 = crea_tarjeta()
-    else:
-      print ("Gracias por su Pago")
-      print ("Saldo de deuda actualizado : {}".format(float(Prox_Pago)-float(Pago)))
-      Prox_Pago = float(Prox_Pago)-float(Pago)
-  if float(Prox_Pago) == 0.0:
-        print ("Su cuenta al corte del mes pasado está en 0's, Felicidades")
-
-
-
-print ("Actualizando saldo...calculando...")
-Prox_Pago = float(Prox_Pago) + float(Nvos_cargos)
-print ("Su saldo actualizado es : $",Prox_Pago)
-print ("Gracias por preferir el Banco del Malestar, vuelva pronto")
-
-'''
